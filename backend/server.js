@@ -1,7 +1,12 @@
 import express from 'express'
 import data from './data/data.js'
-const app = express();
+
+import dotenv from 'dotenv';
+dotenv.config();
+import connectDB from './config/db.js';
 const port=5001;
+connectDB()
+const app = express();
 app.get('/', (req, res) => {
     res.send('API is running....');
   });
