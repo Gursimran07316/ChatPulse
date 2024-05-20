@@ -18,5 +18,5 @@ const chatSchema = mongoose.Schema(
       groupAdmin: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
     
   })
-  const chat = mongoose.model('Chat', chatSchema);
-  export default chat
+  const Chat = mongoose.model('Chat', chatSchema);
+  export default Chat
