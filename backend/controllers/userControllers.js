@@ -76,7 +76,7 @@ const getAllUsers=asyncHandler( async (req,res)=>{
       {email:{$regex:req.query.search,$options: "i" }}
     ]
   }:{}
-  const users = await User.find(keyword).find({ _id: { $ne: req.user._id } });
+  const users = await User.find(keyword).find({ _id: { $ne: req.user._id } }).select('-password');
   res.send(users)
 })
   export {registerUser,loginUser,getAllUsers}
