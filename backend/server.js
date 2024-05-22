@@ -2,6 +2,7 @@ import express from 'express'
 import data from './data/data.js'
 import userRoutes from './routes/userRoutes.js'
 import chatRoutes from './routes/chatRoutes.js'
+import messageRoutes from './routes/messageRoutes.js'
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 dotenv.config();
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
   });
   app.use("/api/user",userRoutes)
   app.use("/api/chats",chatRoutes)
+  app.use("/api/messages",messageRoutes)
   app.get('/chatdata', (req, res) => {
     res.send(data);
   }); 
