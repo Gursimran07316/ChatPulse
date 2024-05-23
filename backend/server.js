@@ -1,5 +1,4 @@
 import express from 'express'
-import data from './data/data.js'
 import userRoutes from './routes/userRoutes.js'
 import chatRoutes from './routes/chatRoutes.js'
 import messageRoutes from './routes/messageRoutes.js'
@@ -55,7 +54,7 @@ const server = app.listen(
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin:"*" ,
+    origin:"https://chatpulse-gmlv.onrender.com/" ,
     // credentials: true,
   },
 });
