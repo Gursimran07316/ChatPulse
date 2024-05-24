@@ -54,7 +54,7 @@ const server = app.listen(
 const io = new Server(server, {
   pingTimeout: 60000,
   cors: {
-    origin:"https://chatpulse-gmlv.onrender.com/" ,
+    origin:process.env.NODE_ENV === "production"? process.env.Link:"http://localhost:3000" ,
     // credentials: true,
   },
 });
